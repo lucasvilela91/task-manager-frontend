@@ -18,18 +18,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
   font-family: "Archivo", sans-serif;
   background: $background-color;
   color: $primary-text-color;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
