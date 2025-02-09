@@ -17,11 +17,16 @@ function App() {
         },
     ]);
 
+    const handleCleanTasks = () => {
+        setTasks([]);
+    };
+
     return (
         <>
             {tasks.map((task) => (
                 <TaskItem key={task.id} task={task} />
             ))}
+            <button onClick={handleCleanTasks}>Limpar tarefas</button>
         </>
     );
 }
