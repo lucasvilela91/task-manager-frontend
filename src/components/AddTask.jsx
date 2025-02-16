@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CustomInput from "./CustomInput";
+import CustomButton from "./CustomButton";
 
 const AddTask = () => {
     const [task, setTask] = useState("");
@@ -14,6 +15,7 @@ const AddTask = () => {
                 value={task}
                 onChange={onChange}
             />
+            <CustomButton>+</CustomButton>
         </div>
     );
 };
