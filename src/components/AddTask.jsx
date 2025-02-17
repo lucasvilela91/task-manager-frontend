@@ -9,7 +9,7 @@ import CustomButton from "./CustomButton";
 
 import axios from "axios";
 
-const AddTask = () => {
+const AddTask = ({ fetchTasks }) => {
     const [task, setTask] = useState("");
 
     const onChange = (e) => {
@@ -32,7 +32,14 @@ const AddTask = () => {
                     isCompleted: false,
                 }
             );
-        } catch (error) {}
+            await fetchTasks();
+
+            setTask("");
+
+            return toast.success("A tarefa foi adicionada com sucesso!");
+        } catch (error) {
+            return toast.error("A tarefa não foi adicionada!");
+        }
     };
 
     return (
