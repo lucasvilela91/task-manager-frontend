@@ -25,6 +25,13 @@ const AddTask = () => {
                     )
                 );
             }
+            await axios.post(
+                "https://task-manager-backend-lucasvilela.up.railway.app/tasks",
+                {
+                    description: task,
+                    isCompleted: false,
+                }
+            );
         } catch (error) {}
     };
 
