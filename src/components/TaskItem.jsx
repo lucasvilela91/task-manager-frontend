@@ -4,13 +4,15 @@ import "./TaskItem.scss";
 import { MdDelete } from "react-icons/md";
 import { toast } from "react-toastify";
 
-const TaskItem = ({ task }) => {
+const TaskItem = ({ task, fetchTasks }) => {
     const handleTaskDeletion = async () => {
         try {
             await axios.delete(
                 `${import.meta.env.VITE_API_REMOTE_URL}/tasks/${task._id}`
             );
-            return toast.success("Tarefa excluída com sucesso!");
+            await fetchTasks();
+
+            toast.success("Tarefa excluída com sucesso!");
         } catch (error) {
             // Verifique o valor no console
             console.log(error);
