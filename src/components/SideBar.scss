@@ -5,6 +5,11 @@
     padding: 56px 28px;
     position: relative;
 
+    .logo img {
+        height: 42px;
+        width: auto;
+    }
+
     @media (max-width: 768px) {
         display: none;
     }
