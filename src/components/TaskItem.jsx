@@ -20,6 +20,23 @@ const TaskItem = ({ task, fetchTasks }) => {
         }
     };
 
+    const handleTaskCompletionChange = async (e) => {
+        try {
+            await axios.patch(
+                `${import.meta.env.VITE_API_REMOTE_URL}/tasks/${task._id}`,
+                {
+                    isCompleted: e.target.checked,
+                }
+            );
+
+            await fetchTasks();
+
+            toast.success("A tarefa foi modificada com sucesso");
+        } catch (error) {
+            toast.error("Não foi possível mudar o status da tarefa!");
+        }
+    };
+
     return (
         <div className="task-item-container">
             <div className="task-description">
@@ -31,7 +48,11 @@ const TaskItem = ({ task, fetchTasks }) => {
                     }
                 >
                     {task.description}
-                    <input type="checkbox" defaultChecked={task.isCompleted} />
+                    <input
+                        type="checkbox"
+                        defaultChecked={task.isCompleted}
+                        onChange={(e) => handleTaskCompletionChange(e)}
+                    />
                     <span
                         className={
                             task.isCompleted
