@@ -1,7 +1,23 @@
+import axios from "axios";
 import "./TaskItem.scss";
 
 import { MdDelete } from "react-icons/md";
+import { toast } from "react-toastify";
+
 const TaskItem = ({ task }) => {
+    const handleTaskDeletion = async () => {
+        try {
+            await axios.delete(
+                `${import.meta.env.VITE_API_REMOTE_URL}/tasks/${task._id}`
+            );
+            return toast.success("Tarefa excluída com sucesso!");
+        } catch (error) {
+            // Verifique o valor no console
+            console.log(error);
+            toast.error("Não foi possível excluir a tarefa!");
+        }
+    };
+
     return (
         <div className="task-item-container">
             <div className="task-description">
@@ -25,7 +41,11 @@ const TaskItem = ({ task }) => {
             </div>
 
             <div className="delete">
-                <MdDelete size={18} color="#F97474" />
+                <MdDelete
+                    size={18}
+                    color="#F97474"
+                    onClick={handleTaskDeletion}
+                />
             </div>
         </div>
     );

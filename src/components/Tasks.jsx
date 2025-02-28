@@ -12,7 +12,7 @@ const Tasks = () => {
     const fetchTasks = async () => {
         try {
             const { data } = await axios.get(
-                "https://task-manager-backend-lucasvilela.up.railway.app/tasks"
+                `${import.meta.env.VITE_API_REMOTE_URL}/tasks`
             );
             setTasks(data);
         } catch (error) {
