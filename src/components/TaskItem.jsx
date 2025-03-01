@@ -13,9 +13,7 @@ const TaskItem = ({ task, fetchTasks }) => {
             await fetchTasks();
 
             toast.success("Tarefa excluída com sucesso!");
-        } catch (error) {
-            // Verifique o valor no console
-            console.log(error);
+        } catch (_error) {
             toast.error("Não foi possível excluir a tarefa!");
         }
     };
@@ -32,7 +30,7 @@ const TaskItem = ({ task, fetchTasks }) => {
             await fetchTasks();
 
             toast.success("A tarefa foi modificada com sucesso");
-        } catch (error) {
+        } catch (_error) {
             toast.error("Não foi possível mudar o status da tarefa!");
         }
     };
