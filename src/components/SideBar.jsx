@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import CustomButton from "./CustomButton";
 
-import "./Sidebar.scss";
+import "./SideBar.scss";
 import logo from "../assets/images/logo.svg";
 
 const Sidebar = () => {
