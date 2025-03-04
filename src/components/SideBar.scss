@@ -5,6 +5,10 @@
     padding: 56px 28px;
     position: relative;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Move para antes do @media
+
     .logo img {
         height: 42px;
         width: auto;
@@ -13,10 +17,6 @@
     @media (max-width: 768px) {
         display: none;
     }
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
     .sign-out {
         position: absolute;
