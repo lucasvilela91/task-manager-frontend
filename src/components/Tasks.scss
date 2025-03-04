@@ -1,9 +1,9 @@
 .tasks-container {
-    padding: 60px 85px;
+    padding: 30px 30px;
     display: flex;
     flex-direction: column;
     max-width: 40%;
-    padding-top: 50px;
+    padding-top: 30px;
     height: 100vh;
     overflow-y: hidden;
     flex: auto;
@@ -23,6 +23,7 @@
 
     h3 {
         font-size: 18px;
+        margin-top: 0px;
     }
 
     .last-tasks {
@@ -30,43 +31,49 @@
         overflow-y: hidden;
         display: flex;
         flex-direction: column;
+        max-height: 100%;
 
         h3 {
             margin-bottom: 18px;
         }
 
-        /* width */
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #653fff;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
         .tasks-list {
             overflow-y: auto;
-            margin-top: 28px;
+            margin-top: 10px;
         }
     }
 
     .completed-tasks {
         flex: 1;
+        overflow-y: hidden;
         padding-top: 28px;
+        display: flex;
+        flex-direction: column;
+        max-height: 100%; /* Garante que ocupe o máximo possível dentro da container */
 
         .tasks-list {
             margin-top: 28px;
+            overflow-y: auto; /* Habilita o scroll */
         }
     }
+}
+
+/* Personalização do scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #653fff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
