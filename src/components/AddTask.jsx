@@ -26,7 +26,7 @@ const AddTask = ({ fetchTasks }) => {
                 );
             }
             await axios.post(
-                "https://task-manager-backend-lucasvilela.up.railway.app/tasks",
+                "https://task-manager-backend-t3m8.onrender.com/tasks",
                 {
                     description: task,
                     isCompleted: false,
